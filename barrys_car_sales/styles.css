@@ -4,6 +4,23 @@ body {
     background: #eeeeee;
 }
 
+.skip-link{
+    position:absolute;
+    left: -999px;
+    background-color: bold;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+.skip-link:focus{
+    left: 10px;
+    top:  10px;
+}
+a:focus, button:focus, input:focus, select:focus, textarea:focus{
+    outline: 3px solid #d9534f;
+    outline-offset: 2px;
+}
+
 header {
     background: #14365d;
     color: white;
@@ -12,60 +29,245 @@ header {
 
 h1 {
     margin: 0;
+    font: size 28px;
 }
-
+ header a{
+    color:#ffffff
+}
 nav {
     margin-top: 15px;
+    gap: 10px;
+   
 }
 
 nav a {
     color: white;
+    text-decoration: underline;
+    padding: 8px 14px;
     margin-right: 15px;
+    display: inline-block;
+    border-radius: 4px
+    
+}
+
+nav a:hover{
+    background-color: #1e4d82
+}
+nav a{
+    background-color: #ffc61a;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none
+
 }
 
 main {
-    width: 900px;
+   max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    background: white;
+    background: #ffffff;
+    border-radius: 6px;
 }
+ h2{
+    color:#14365d;
+    margin-top:0;
+ }
+ h3{
+    color:#14365d;
 
-img {
-    width: 300px;
 }
+a{
+    color:#0b4a9e;
+}
+img {
+   max-width: 100%;
+   height: auto;
+   border-radius: 4px;
+}
+.car-grid{
+    display: grid;
+    grid-template-columns:repeat(2,  1fr);
+    gap: 20px;
+    margin-top:20px
+}
+.car{
+    border: 1px solid #cccccc;
+    background-color: #fafafa;
+    padding: 15px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.car img{
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    margin-bottom: 10px;
+
+
+}
+.price{
+    background-color: #ffc61a;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+.car a {
+    display: inline-block;
+    background-color: #14365d;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius:4px;
+    font-weight: bold;
+    margin-top: 8px;
+
+}
+.car a:hover{
+    background-color: #0d243f;
+  }
 
 table {
     border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+}
+caption{
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 8px;
+
 }
 
-td {
+th, td {
     border: 1px solid black;
-    padding: 5px;
+    text-align: left;
+    padding: 10px;
+}
+th{
+    background-color: #14365d;
+    color: #ffffff
+}
+
+aside{
+    background-color: #f4f7fb;
+    border-left: 4px solid #14365d;
+    padding: 15px;
+    margin: 20px;
 }
 
 label {
     display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+
 }
 
-input,
-select,
-textarea {
-    width: 400px;
-    margin-bottom: 10px;
+input,select,textarea {
+    width: 100%;
+    max-width: 420px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    margin-bottom: 15px;
+    border:1px solid #999999;
+    border-radius: 4px;
 }
 
 textarea {
     height: 100px;
 }
 
+input[type="radio"],
+input[type="checkbox"]{
+    width: auto;
+    margin:0;
+}
+fieldset{
+    border: 1px solid #999999;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    max-width: 420px;
+    border-radius: 4px;
+}
+legend{
+    font-weight: bold;
+    padding: 0px 8px;
+    background-color:#ffffff;
+}
+fieldset div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+fieldset label,
+.checkbox-container label {
+    display: inline-block;
+    font-weight: normal;
+    margin: 0 0 0 8px;
+}
 button {
     background: #14365d;
     color: white;
-    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+
+}
+ button:hover{
+    background-color: #0d243f;
+
+ }
+
+ #form-feedback{
+    margin: 15px 0;
+    font-weight: bold;
+}
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+text-area:focus{
+    outline: 3px solid #d9534f;
+    outline-offset: 2px;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 15px 0;
 }
 
-footer {
-    width: 900px;
-    margin: auto;
-    font-size: 12px;
+.checkbox-container label {
+    margin-bottom: 0;
+    font-weight: normal;
 }
+
+input[type="checkbox"] {
+    width: auto;
+    margin: 0px;
+    
+footer {
+    background-color: #14365d;
+    color: #ffffff;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px 25px;
+    font-size:15px;
+    border-radius: 6px;
+    text-align: center;
+}
+ footer a{
+    color:#ffffff;
+
+ }
