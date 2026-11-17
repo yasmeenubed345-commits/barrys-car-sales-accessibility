@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vehicle Enquiry - Barry's Car Sales</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#content">skip to main content</a>
 </head>
 <body>
 <header>
@@ -15,17 +19,18 @@
         </div>
         <div>Call 01707 111 222</div>
     </div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="enquiry.html">Enquiry</a>
-    </nav>
+   <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="enquiry.html">Enquiry</a>
+</nav>
 </header>
+
 
 <main>
     <h2>Vehicle enquiry</h2>
     <p>Complete the form below and a member of our team will contact you.</p>
-    <p>Fields marked in red are important.</p>
+    <p>Fields marked with<strong>*</strong> are required.</p>
 
     <form action="#" method="post">
         <div>
@@ -40,37 +45,43 @@
         </div>
 
         <div>
-            <span>Full name</span>
-            <input type="text" name="name" placeholder="e.g. Dave Smith">
+            <label for= "fullname">Full Name *</label>
+            <input type="text" id="fullname" name="fullname" placeholder="e.g. Dave Smith" autocomplete="name" required>
         </div>
 
         <div>
-            <label for="email">Email address</label>
-            <input type="text" id="email" name="email">
+            <label for="email">Email address *</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
         </div>
 
         <div>
-            <label for="phone">Telephone</label>
-            <input type="text" id="phone" name="phone">
+            <label for="phone">Telephone (optional)</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
         </div>
 
         <div>
             <label for="message">Your message</label>
-            <textarea id="message" name="message">Tell us what you would like to know...</textarea>
+            <textarea id="message" name="message" placeholder="Tell us what you would like to know..."></textarea>
         </div>
 
-        <div>
-            <input type="checkbox" id="updates" name="updates">
-            <span>Send me occasional offers and updates</span>
-        </div>
-
-        <div>
-            <label>Preferred contact method</label>
+        <fieldset>
+            <legend>Preferred contact method</legend>
             <div>
-                <input type="radio" name="contact" value="email"> Email
-                <input type="radio" name="contact" value="phone"> Phone
+                <input type="radio" id="contact-email" name="contact" value="email" checked>
+                <label for="contact-email">Email</label>
             </div>
+            <div>
+                <input type="radio" id="contact-phone" name="contact" value="phone">
+                <label for="contact-phone">Phone</label>
+            </div>
+        </fieldset>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="updates" name="updates">
+            <label for="updates">Send me occasional offers and updates</label>
         </div>
+
+       
 
         <button type="submit">SUBMIT</button>
     </form>
@@ -79,7 +90,7 @@
 </main>
 
 <footer>
-    Barry's Car Sales · 15 Chipmunk Close, Hatfield, Hertfordshire · 01707 111 222
+    Barry's Car Sales · 15 Chipmunk Close, Hatfield, Hertfordshire · <a href="tel:01707111222">01707 111 222</a>
 </footer>
 </body>
 </html>
